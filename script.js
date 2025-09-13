@@ -39,3 +39,11 @@ document.getElementById("input11").addEventListener("keypress", function(event) 
     getdata();
   }
 });
+
+const data = await res.json();
+
+if (data.error) {
+  alert("Weather API error: " + data.error);
+  return;
+}
+
