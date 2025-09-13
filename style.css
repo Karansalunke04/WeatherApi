@@ -1,34 +1,101 @@
-/* .video{
-    height: 700px;
-    width: 750px;
-}
-
-.div2{
-    position: relative;
-    bottom: 690px;
-}
-.div-main{
-    height: 460px;
-}
-.div1{
-    position: relative;
-    bottom: 150px;
-} */
-
+/* Reset */
 body, html {
   margin: 0;
   padding: 0;
   height: 100%;
-  overflow: hidden;
   font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
 }
 
+/* Background video */
 #bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
+  z-index: -2;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
   z-index: -1;
 }
 
-.backdrop-blur {
-  background: rgba(255, 255, 255, 0.1);
+/* Card styling */
+.card {
   backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 1rem;
+  padding: 2rem;
+  width: 75%;
+  color: #fff;
+  text-align: center;
+}
+
+/* Search input & button */
+.form-control {
+  border-radius: 50px;
+}
+#btn1 {
+  border-radius: 50px;
+}
+
+/* Text alignment */
+h2, h4, h5, h6 {
+  margin: 0;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 576px) {
+  .card {
+    width: 95% !important;
+    padding: 1rem !important;
+  }
+
+  h2 {
+    font-size: 1.5rem !important;
+  }
+  h4 {
+    font-size: 1.2rem !important;
+  }
+  h5, h6 {
+    font-size: 1rem !important;
+  }
+
+  #temp, #weather, #hum {
+    font-size: 1.2rem !important;
+  }
+
+  /* Stack search input and button */
+  .row.g-2.justify-content-center.mb-4 {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .row.g-2.justify-content-center.mb-4 .col-8,
+  .row.g-2.justify-content-center.mb-4 .col-2 {
+    width: 100% !important;
+  }
+
+  #btn1 {
+    margin-top: 0.5rem;
+  }
+
+  /* Stack weather info vertically */
+  .row.text-center.mb-4, .row.text-center {
+    flex-direction: column;
+  }
+
+  .row.text-center.mb-4 .col-md-4,
+  .row.text-center .col-md-4 {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
 }
