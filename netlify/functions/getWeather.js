@@ -7,7 +7,7 @@ export async function handler(event, context) {
     const response = await axios.get("https://yahoo-weather5.p.rapidapi.com/weather", {
       params: { location: city, format: "json", u: "c" },
       headers: {
-        'x-rapidapi-key': '0c8ed3b71amsh35f6a4b5c6194b9p10fc56jsn8b422255acb6', // stored in Netlify
+        "x-rapidapi-key": process.env.RAPIDAPI_KEY, // stored in Netlify
         "x-rapidapi-host": "yahoo-weather5.p.rapidapi.com"
       }
     });
