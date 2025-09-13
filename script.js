@@ -30,6 +30,14 @@ async function getdata() {
     console.error(err);
     alert("Failed to fetch weather");
   }
+
+  const data = await res.json();
+
+if (data.error) {
+  alert("Weather API error: " + data.error);
+  return;
+}
+
 }
 
 // Enable Enter key search
@@ -39,11 +47,4 @@ document.getElementById("input11").addEventListener("keypress", function(event) 
     getdata();
   }
 });
-
-const data = await res.json();
-
-if (data.error) {
-  alert("Weather API error: " + data.error);
-  return;
-}
 
