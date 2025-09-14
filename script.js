@@ -37,7 +37,7 @@ function getdata() {
     let bgVideo = document.getElementById("bg-video");
     if (weather.toLowerCase().includes("cloud")) {
       bgVideo.src = "images/cloudy.mp4";
-    } else if (weather.toLowerCase().includes("rain")) {
+    } else if (weather.toLowerCase().includes("shower")) {
       bgVideo.src = "images/shower.mp4";
     } else if (weather.toLowerCase().includes("scattered")) {
       bgVideo.src = "images/scattered.mp4";
